@@ -19,7 +19,7 @@ int encriptar_clefia(FILE* src, FILE* dst, int bits) {
 
 	while(fread(bufferFile, sizeof(bufferFile), 1, src) > 0) {
 		ClefiaEncrypt(bufferCLEFIA, bufferFile, rk, r);
-		fwrite(bufferCLEFIA, sizeof(bufferFile), 1, dst);
+		fwrite(bufferCLEFIA, sizeof(bufferCLEFIA), 1, dst);
 	}
 	return EXIT_SUCCESS;
 }
@@ -39,7 +39,7 @@ int desencriptar_clefia(FILE* src, FILE* dst, int bits) {
 
 	while(fread(bufferFile, sizeof(bufferFile), 1, src) > 0) {
 		ClefiaDecrypt(bufferCLEFIA, bufferFile, rk, r);
-		fwrite(bufferCLEFIA, sizeof(bufferFile), 1, dst);
+		fwrite(bufferCLEFIA, sizeof(bufferCLEFIA), 1, dst);
 	}
 	return EXIT_SUCCESS;
 }

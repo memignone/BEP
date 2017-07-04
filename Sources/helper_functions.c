@@ -5,7 +5,9 @@
 #include "../Headers/helper_functions.h"
 #define CLEFIABLOCKSIZE 16	/* 128 bit = 16 byte */
 
-/* ECB - Electronic codebook mode */
+/**********************************
+ * ECB - Electronic CodeBook mode *
+ **********************************/
 int encriptar_clefia_ecb(FILE* src, FILE* dst, int bits) {
 	const unsigned char skey[32] = {	/* seed */
 		0xffU,0xeeU,0xddU,0xccU,0xbbU,0xaaU,0x99U,0x88U,
@@ -46,8 +48,9 @@ int desencriptar_clefia_ecb(FILE* src, FILE* dst, int bits) {
 	return EXIT_SUCCESS;
 }
 
-
-/* CBC - Cipher Block Chaining mode */
+/************************************
+ * CBC - Cipher Block Chaining mode *
+ ************************************/
 int encriptar_clefia_cbc(FILE* src, FILE* dst, int bits) {
 	const unsigned char skey[32] = {	/* seed */
 		0xffU,0xeeU,0xddU,0xccU,0xbbU,0xaaU,0x99U,0x88U,
@@ -100,8 +103,9 @@ int desencriptar_clefia_cbc(FILE* src, FILE* dst, int bits) {
 	return EXIT_SUCCESS;
 }
 
-
-/* Function used only for testing */
+/**********************************
+ * Functions used only for testing *
+ **********************************/
 void BytePut(const unsigned char *data, int bytelen) {
 	while(bytelen-- > 0){
 		printf("%02x", *data++);
